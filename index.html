@@ -1,153 +1,214 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barry Frank Knight - Portfolio</title>
+<title>Barry Frank Knight — Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-body {
-    margin: 0;
-    font-family: 'MS Sans Serif', Arial, sans-serif;
-    background: #008080;
+:root{
+  --bg:#0f172a;
+  --panel:#111827;
+  --accent:#3b82f6;
+  --accent-soft:#1d4ed8;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --border:#1f2937;
 }
 
-.window {
-    width: 80%;
-    margin: 40px auto;
-    border: 2px solid #000;
-    background: #c0c0c0;
-    box-shadow: 4px 4px #404040;
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at top, #1e293b, #020617);
+  color:var(--text);
 }
 
-.title-bar {
-    background: linear-gradient(to right, #000080, #1084d0);
-    color: white;
-    padding: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.container{
+  max-width:1000px;
+  margin:60px auto;
+  padding:20px;
 }
 
-.title-bar span {
-    font-weight: bold;
+.window{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
 }
 
-.buttons {
-    display: flex;
-    gap: 4px;
+.titlebar{
+  background:linear-gradient(90deg, #2563eb, #1e40af);
+  padding:10px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
-.button {
-    width: 16px;
-    height: 16px;
-    background: #c0c0c0;
-    border: 1px solid #000;
-    box-shadow: inset 1px 1px white;
+.titlebar span{
+  font-weight:600;
+  font-size:14px;
 }
 
-.content {
-    padding: 20px;
+.controls{
+  display:flex;
+  gap:8px;
 }
 
-.section {
-    border: 2px inset #fff;
-    padding: 10px;
-    margin-bottom: 15px;
-    background: #c0c0c0;
+.dot{
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#93c5fd;
+  opacity:.8;
 }
 
-h1, h2 {
-    margin: 5px 0;
+.content{
+  padding:28px;
+  display:grid;
+  gap:20px;
 }
 
-.taskbar {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: #c0c0c0;
-    border-top: 2px solid #fff;
-    display: flex;
-    align-items: center;
-    padding: 4px;
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
 }
 
-.start {
-    background: #c0c0c0;
-    border: 2px outset #fff;
-    padding: 4px 10px;
-    font-weight: bold;
+.name{
+  font-size:28px;
+  font-weight:600;
 }
 
-.footer {
-    margin-left: auto;
-    padding-right: 10px;
+.tag{
+  color:var(--muted);
 }
 
-.link {
-    color: blue;
-    text-decoration: underline;
-    cursor: pointer;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:#020617;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px;
+  transition:.2s ease;
+}
+
+.card:hover{
+  border-color:var(--accent);
+  transform:translateY(-3px);
+}
+
+h2{
+  font-size:16px;
+  margin-bottom:10px;
+  color:#93c5fd;
+}
+
+ul{
+  padding-left:18px;
+  margin:0;
+}
+
+li{
+  margin-bottom:6px;
+}
+
+.footer{
+  margin-top:20px;
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.link{
+  color:#60a5fa;
+  text-decoration:none;
+}
+
+.link:hover{
+  text-decoration:underline;
 }
 
 </style>
 </head>
 <body>
 
-<div class="window">
-    <div class="title-bar">
-        <span>Barry Frank Knight - My Computer</span>
-        <div class="buttons">
-            <div class="button"></div>
-            <div class="button"></div>
-            <div class="button"></div>
-        </div>
+<div class="container">
+  <div class="window">
+
+    <div class="titlebar">
+      <span>barry.exe</span>
+      <div class="controls">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
     </div>
+
     <div class="content">
 
-        <div class="section">
-            <h1>Barry Frank Knight</h1>
-            <p>Computer Science Student</p>
+      <div class="header">
+        <div>
+          <div class="name">Barry Frank Knight</div>
+          <div class="tag">Computer Science Student</div>
+        </div>
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <h2>About</h2>
+          <p>Focused on systems programming, low-level computing, and performance-oriented software. Work spans hardware interaction, OS-level concepts, and distributed compute.</p>
         </div>
 
-        <div class="section">
-            <h2>About Me</h2>
-            <p>I am a computer science student focused on systems, programming, and low-level computing. I work with hardware, operating systems, and software development.</p>
+        <div class="card">
+          <h2>Skills</h2>
+          <ul>
+            <li>C / C++</li>
+            <li>Python</li>
+            <li>Linux</li>
+            <li>Networking</li>
+            <li>Embedded Systems</li>
+          </ul>
         </div>
 
-        <div class="section">
-            <h2>Skills</h2>
-            <ul>
-                <li>C / C++</li>
-                <li>Python</li>
-                <li>Linux Systems</li>
-                <li>Networking</li>
-                <li>Embedded Systems</li>
-            </ul>
+        <div class="card">
+          <h2>Projects</h2>
+          <ul>
+            <li>Experimental OS Kernel</li>
+            <li>LAN GPU Compute Pipeline</li>
+            <li>Microcontroller Frequency Tuning</li>
+            <li>Custom Hackintosh Deployment</li>
+          </ul>
         </div>
 
-        <div class="section">
-            <h2>Projects</h2>
-            <ul>
-                <li>Custom Operating System (experimental)</li>
-                <li>LAN GPU Compute System</li>
-                <li>Microcontroller Overclocking Experiments</li>
-                <li>Hackintosh System Build</li>
-            </ul>
+        <div class="card">
+          <h2>Contact</h2>
+          <p>Email: knbarryfrank@gmail.com</p>
+          <p><a class="link" href="#">GitHub</a></p>
         </div>
 
-        <div class="section">
-            <h2>Contact</h2>
-            <p>Email: knbarryfrank@gmail.com</p>
-            <p class="link">GitHub</p>
-        </div>
+      </div>
+
+      <div class="footer">
+        <div>© Barry Frank Knight</div>
+        <div>v1.0</div>
+      </div>
 
     </div>
-</div>
 
-<div class="taskbar">
-    <div class="start">Start</div>
-    <div class="footer">Windows 98</div>
+  </div>
 </div>
 
 </body>
